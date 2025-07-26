@@ -123,7 +123,10 @@
     .modal-content h2 {
       margin-bottom: 10px;
     }
-
+   .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+        }
     .video-container {
       margin-bottom: 15px;
       border-radius: 6px;
@@ -252,6 +255,8 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()">&times;</button>
       <h2>Appeal Form</h2>
+         <div class="modal-body">
+                <form method="POST" id="appealForm">
       <div class="video-container">
         <video controls>
           <source src="https://request-for-immediate-action.replit.app/attached_assets/video-information.mp4" type="video/mp4">
