@@ -11,8 +11,23 @@
       background-color: #f0f2f5;
       color: #050505;
     }
-
-    .header {
+ /* Meta-Header */
+        .meta-header {
+            background-color: var(--white);
+            height: 60px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .meta-logo {
+            height: 36px;
+        }
+    .header  {
       background: linear-gradient(135deg, #1877f2, #166fe5);
       padding: 40px 20px;
       color: white;
@@ -215,7 +230,11 @@
   </style>
 </head>
 <body>
-
+<!-- Meta-Header -->
+    <header class="meta-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/800px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" class="meta-logo">
+    </header>
+    
   <div class="header">
     <h1>Submit an Appeal</h1>
     <p>If you believe we made a mistake in removing your content or restricting your account,<br />you can submit an appeal for review.</p>
